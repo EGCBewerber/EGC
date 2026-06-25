@@ -1,308 +1,500 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EGC Call Center Services</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
 }
 
-body {
-  background: #f5f7fb;
-  color: #0b1b3a;
+html{
+scroll-behavior:smooth;
 }
 
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 60px;
-  background: #07142a;
-  color: white;
+body{
+background:#000;
+color:#fff;
+overflow-x:hidden;
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(0,0,0,0.95);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #b8860b;
+z-index:1000;
 }
 
-.nav-links {
-  display: flex;
-  gap: 25px;
+.logo{
+font-size:32px;
+font-weight:700;
+color:#d4af37;
+letter-spacing:2px;
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
+.nav-links{
+display:flex;
+gap:30px;
 }
 
-.btn-primary {
-  background: #1b66ff;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 8px;
-  text-decoration: none;
+.nav-links a{
+color:white;
+text-decoration:none;
+font-size:15px;
+transition:.3s;
 }
 
-/* HERO */
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 60px;
-  background: linear-gradient(120deg, #07142a, #0b2a5a);
-  color: white;
+.nav-links a:hover{
+color:#d4af37;
 }
 
-.hero-text {
-  max-width: 50%;
+.btn-primary{
+background:#d4af37;
+color:#000;
+padding:12px 22px;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+transition:.3s;
 }
 
-.hero-text h1 {
-  font-size: 48px;
-  line-height: 1.1;
+.btn-primary:hover{
+transform:translateY(-2px);
 }
 
-.hero-text span {
-  color: #3aa0ff;
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:140px 8% 80px;
+background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.9));
 }
 
-.hero-text p {
-  margin-top: 20px;
-  opacity: 0.9;
+.hero-text{
+width:50%;
 }
 
-.hero-buttons {
-  margin-top: 25px;
-  display: flex;
-  gap: 15px;
+.hero-text h1{
+font-size:65px;
+line-height:1.1;
+margin-bottom:20px;
 }
 
-.btn {
-  padding: 12px 18px;
-  border-radius: 8px;
-  text-decoration: none;
+.hero-text span{
+color:#d4af37;
 }
 
-.btn-blue {
-  background: #1b66ff;
-  color: white;
+.hero-text p{
+font-size:18px;
+line-height:1.8;
+color:#ccc;
+margin-bottom:35px;
 }
 
-.btn-outline {
-  border: 1px solid white;
-  color: white;
+.hero-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
 }
 
-.hero-img {
-  width: 45%;
-  border-radius: 12px;
-  overflow: hidden;
+.btn-gold{
+background:#d4af37;
+color:#000;
+padding:15px 30px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
 }
 
-.hero-img img {
-  width: 100%;
-  border-radius: 12px;
+.btn-outline{
+border:2px solid #d4af37;
+color:#d4af37;
+padding:15px 30px;
+border-radius:40px;
+text-decoration:none;
 }
 
-/* FEATURES */
-.features {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  padding: 40px 60px;
+.hero-img{
+width:42%;
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+.hero-img img{
+width:100%;
+border-radius:20px;
+border:3px solid #d4af37;
+box-shadow:0 0 40px rgba(212,175,55,.35);
 }
 
-/* SERVICES */
-.section-title {
-  text-align: center;
-  margin: 40px 0 20px;
+.section{
+padding:100px 8%;
 }
 
-.services {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  padding: 0 60px 60px;
+.section-title{
+text-align:center;
+font-size:42px;
+margin-bottom:60px;
+color:#d4af37;
 }
 
-.service {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
 
-/* FORMS */
-.forms {
-  display: flex;
-  gap: 20px;
-  padding: 0 60px 60px;
+.card{
+background:#0c0c0c;
+padding:30px;
+border-radius:15px;
+border:1px solid #222;
+text-align:center;
+transition:.3s;
 }
 
-.form-box {
-  flex: 1;
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
+.card:hover{
+transform:translateY(-8px);
+border-color:#d4af37;
 }
 
-input, select, textarea {
-  width: 100%;
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
+.card h3{
+color:#d4af37;
+margin-bottom:15px;
 }
 
-button {
-  margin-top: 15px;
-  width: 100%;
-  padding: 12px;
-  background: #1b66ff;
-  color: white;
-  border: none;
-  border-radius: 8px;
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
-/* FOOTER */
-.footer {
-  background: #07142a;
-  color: white;
-  padding: 40px 60px;
-  display: flex;
-  justify-content: space-between;
+.service{
+background:#0c0c0c;
+padding:30px;
+border-radius:15px;
+border:1px solid #222;
+transition:.3s;
 }
 
-/* WHATSAPP BUTTON */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 14px 16px;
-  border-radius: 50px;
-  text-decoration: none;
+.service:hover{
+border-color:#d4af37;
+transform:translateY(-8px);
+}
+
+.service h3{
+color:#d4af37;
+margin-bottom:15px;
+}
+
+.forms{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.form-box{
+background:#0c0c0c;
+padding:30px;
+border-radius:15px;
+border:1px solid #222;
+}
+
+.form-box h3{
+margin-bottom:20px;
+color:#d4af37;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+background:#111;
+border:1px solid #333;
+color:white;
+border-radius:10px;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+background:#d4af37;
+color:black;
+font-weight:bold;
+border-radius:10px;
+cursor:pointer;
+}
+
+.footer{
+background:#050505;
+border-top:1px solid #b8860b;
+padding:60px 8%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.footer h3,
+.footer h4{
+color:#d4af37;
+margin-bottom:15px;
+}
+
+.footer p{
+color:#ccc;
+margin-bottom:8px;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+color:white;
+text-decoration:none;
+padding:16px 22px;
+border-radius:50px;
+font-weight:bold;
+box-shadow:0 0 20px rgba(0,0,0,.4);
+z-index:9999;
+}
+
+@media(max-width:900px){
+
+.navbar{
+padding:15px;
+}
+
+.nav-links{
+display:none;
+}
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text{
+width:100%;
+}
+
+.hero-text h1{
+font-size:42px;
+}
+
+.hero-img{
+width:100%;
+margin-top:40px;
+}
 }
 </style>
+
 </head>
 
 <body>
 
-<!-- NAV -->
-<div class="navbar">
-  <div class="logo">EGC</div>
-  <div class="nav-links">
-    <a href="#">Startseite</a>
-    <a href="#">Über uns</a>
-    <a href="#">Leistungen</a>
-    <a href="#">Karriere</a>
-    <a href="#">Kontakt</a>
-  </div>
-  <a class="btn-primary" href="#">Projekt anfragen</a>
+<nav class="navbar">
+<div class="logo">EGC</div>
+
+<div class="nav-links">
+<a href="#">Startseite</a>
+<a href="#">Über Uns</a>
+<a href="#">Leistungen</a>
+<a href="#">Karriere</a>
+<a href="#">Kontakt</a>
 </div>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-text">
-    <h1>WIR VERBINDEN <span>MENSCHEN.</span><br>WIR SCHAFFEN <span>LÖSUNGEN.</span></h1>
-    <p>EGC ist Ihr professioneller Partner im Kundenservice, Vertrieb und Call Center Lösungen.</p>
+<a href="#kontakt" class="btn-primary">Projekt anfragen</a>
 
-    <div class="hero-buttons">
-      <a class="btn btn-blue" href="#">Unsere Leistungen</a>
-      <a class="btn btn-outline" href="#">Über uns</a>
-    </div>
-  </div>
+</nav>
 
-  <div class="hero-img">
-    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984" />
-  </div>
+<section class="hero">
+
+<div class="hero-text">
+<h1>
+WIR VERBINDEN<br>
+<span>MENSCHEN.</span><br>
+WIR SCHAFFEN<br>
+<span>LÖSUNGEN.</span>
+</h1>
+
+<p>
+Professionelle Call Center Services für Kundenservice,
+Vertrieb, Backoffice und individuelle Unternehmenslösungen.
+Ihr zuverlässiger Partner für nachhaltigen Erfolg.
+</p>
+
+<div class="hero-buttons">
+<a href="#leistungen" class="btn-gold">Unsere Leistungen</a>
+<a href="#kontakt" class="btn-outline">Kontakt</a>
+</div>
 </div>
 
-<!-- FEATURES -->
+<div class="hero-img">
+<img src="webisten bild.jpeg" alt="EGC Call Center">
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">Warum EGC?</h2>
+
 <div class="features">
-  <div class="card">100% Kundenorientiert</div>
-  <div class="card">Geschulte Mitarbeiter</div>
-  <div class="card">Moderne Technologie</div>
-  <div class="card">DSGVO Konform</div>
-  <div class="card">Ergebnisorientiert</div>
+
+<div class="card">
+<h3>100%</h3>
+<p>Kundenorientiert</p>
 </div>
 
-<!-- SERVICES -->
-<h2 class="section-title">Professioneller Service für Ihren Erfolg</h2>
+<div class="card">
+<h3>24/7</h3>
+<p>Erreichbarkeit</p>
+</div>
+
+<div class="card">
+<h3>DSGVO</h3>
+<p>Datenschutzkonform</p>
+</div>
+
+<div class="card">
+<h3>Top Team</h3>
+<p>Geschulte Mitarbeiter</p>
+</div>
+
+<div class="card">
+<h3>Modern</h3>
+<p>Neueste Technologien</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="leistungen">
+
+<h2 class="section-title">Unsere Leistungen</h2>
 
 <div class="services">
-  <div class="service">Kundenservice</div>
-  <div class="service">Inbound & Outbound</div>
-  <div class="service">Vertrieb & Telesales</div>
-  <div class="service">Backoffice</div>
-  <div class="service">Individuelle Lösungen</div>
+
+<div class="service">
+<h3>Kundenservice</h3>
+<p>Professionelle Betreuung Ihrer Kunden.</p>
 </div>
 
-<!-- FORMS -->
+<div class="service">
+<h3>Inbound Calls</h3>
+<p>Bearbeitung eingehender Anfragen.</p>
+</div>
+
+<div class="service">
+<h3>Outbound Calls</h3>
+<p>Aktive Kundenansprache und Akquise.</p>
+</div>
+
+<div class="service">
+<h3>Backoffice</h3>
+<p>Administrative Unterstützung.</p>
+</div>
+
+<div class="service">
+<h3>Telesales</h3>
+<p>Effiziente Vertriebsunterstützung.</p>
+</div>
+
+<div class="service">
+<h3>Individuelle Lösungen</h3>
+<p>Maßgeschneiderte Konzepte für Unternehmen.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="kontakt">
+
+<h2 class="section-title">Kontakt & Bewerbung</h2>
+
 <div class="forms">
 
-  <div class="form-box">
-    <h3>Bewerbung</h3>
-    <input placeholder="Name" />
-    <input placeholder="E-Mail" />
-    <input placeholder="Telefon" />
-    <select>
-      <option>Position auswählen</option>
-    </select>
-    <button>Jetzt bewerben</button>
-  </div>
+<div class="form-box">
+<h3>Jetzt bewerben</h3>
 
-  <div class="form-box">
-    <h3>Projekt anfragen</h3>
-    <input placeholder="Unternehmen" />
-    <input placeholder="E-Mail" />
-    <input placeholder="Telefon" />
-    <textarea placeholder="Beschreibung"></textarea>
-    <button>Anfrage senden</button>
-  </div>
+<input type="text" placeholder="Name">
+<input type="email" placeholder="E-Mail">
+<input type="tel" placeholder="Telefon">
+
+<select>
+<option>Position auswählen</option>
+<option>Kundenberater</option>
+<option>Teamleiter</option>
+<option>Vertrieb</option>
+</select>
+
+<button>Jetzt bewerben</button>
 
 </div>
 
-<!-- FOOTER -->
-<div class="footer">
-  <div>
-    <h3>EGC</h3>
-    <p>Call Center Services</p>
-  </div>
+<div class="form-box">
+<h3>Projekt anfragen</h3>
 
-  <div>
-    <h4>Navigation</h4>
-    <p>Startseite</p>
-    <p>Leistungen</p>
-    <p>Kontakt</p>
-  </div>
+<input type="text" placeholder="Unternehmen">
+<input type="email" placeholder="E-Mail">
+<input type="tel" placeholder="Telefon">
 
-  <div>
-    <h4>Kontakt</h4>
-    <p>info@egc.de</p>
-    <p>+49 ...</p>
-  </div>
+<textarea rows="5" placeholder="Beschreiben Sie Ihr Projekt"></textarea>
+
+<button>Anfrage senden</button>
+
 </div>
 
-<!-- WhatsApp -->
-<a class="whatsapp" href="#">WhatsApp</a>
+</div>
+
+</section>
+
+<footer class="footer">
+
+<div>
+<h3>EGC</h3>
+<p>Premium Call Center Services</p>
+</div>
+
+<div>
+<h4>Navigation</h4>
+<p>Startseite</p>
+<p>Leistungen</p>
+<p>Karriere</p>
+<p>Kontakt</p>
+</div>
+
+<div>
+<h4>Kontakt</h4>
+<p>+90 544 794 01 33</p>
+<p>info@egc-services.com</p>
+</div>
+
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/905447940133?text=Hallo%20EGC,%20ich%20habe%20eine%20Anfrage."
+target="_blank">
+WhatsApp </a>
 
 </body>
 </html>
